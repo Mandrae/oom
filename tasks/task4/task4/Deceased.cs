@@ -11,11 +11,9 @@ namespace task4
     class Deceased : IPerson
     {
         private string basestatus = "Deceased";
-        private string lastname; // privately stored information on family name
-        private string firstname; // privately stored information on first name
+        private string lastname, firstname; // privately stored information on name
         private string _gender; // private info on gender, not really used
-        private DateTime birthday;
-        private DateTime death; // day of death
+        private DateTime birthday, death; // day of birth & day of death
         private string Name; // full name for display
         public int Age {
             get {
@@ -39,6 +37,15 @@ namespace task4
             birthday = Convert.ToDateTime(newBday); // dates entered as strings, need to be converted
             death = Convert.ToDateTime(newDeath);
             Service = SubscribedService(newService);
+        }
+
+        [JsonConstructor]
+
+        public Deceased(string nameofperson, string condition, string serviceabo, int age)
+        {
+            Name = nameofperson;
+            basestatus = condition;
+            Service = serviceabo;
         }
 
         public string Nameofperson => Name;

@@ -34,6 +34,14 @@ namespace task4
             Name = $"{Title}{newFirstname} {newLastname}"; 
         }
 
+        [JsonConstructor]
+        public Clients(string nameofperson, string condition, string serviceabo)
+        {
+            Name = nameofperson;
+            basestatus = condition;
+            Service = serviceabo;
+        }
+
         public string Nameofperson => Name; // Interface
         public string Condition => basestatus; // Interface
         public string ServiceAbo => Service;

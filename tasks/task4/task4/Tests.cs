@@ -97,5 +97,27 @@ namespace task4
             Assert.IsFalse(h.Nameofperson == "Carlisle Thomas");
         }
 
+        [Test]
+
+        /* Test #9 for Staff - if input is incorrect */
+
+        public void StaffWrong()
+        {
+            Assert.Catch(() =>
+            {
+                var i = new Staff("Friedrich Jergitsch", "marketing", 5);
+            });
+        }
+
+        [Test]
+        
+        /* Test #10 for Staff - input correct */
+
+        public void StaffOk()
+        {
+            var j = new Staff("Friedrich Jergitsch", "marketing", 3);
+            Assert.IsTrue(j.Employment == "Trainee");
+        }
+
     }
 }

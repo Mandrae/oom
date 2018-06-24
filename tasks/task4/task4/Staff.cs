@@ -9,7 +9,7 @@ namespace task4
     class Staff : IPerson
     {
 
-        private string Employment; 
+        public string Employment; 
 
         public Staff(string nameofperson, string serviceabo, int x, string condition = "Staff")
         {
@@ -27,6 +27,8 @@ namespace task4
         public string Condition { get; }
         public string ServiceAbo { get; }
 
+
+        /* using a switch case instead of dictionary to define the status of the employees (variation of the same)*/
         public string SubscribedService(int a)
         {
             switch (a)
