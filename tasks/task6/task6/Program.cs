@@ -30,13 +30,14 @@ namespace task6
             Cerealization.DoJsonStuff(person);
 
             /* task 7 - asynchronous programming */
-            Console.WriteLine($"Currently we are working on thread #{Thread.CurrentThread.ManagedThreadId}\n");
+            Console.WriteLine($"Currently we are working on thread #{Thread.CurrentThread.ManagedThreadId}\n"); // show that we are on thread #1
             Console.WriteLine("Now let's start up another thread...");
-            Asyncprog.SyncingAsync(); // works on method in the background on different thread
+            Asyncprog.SyncingAsync(); // works on method on different thread
 
             /* task 6 - subscribing to a subject */
             Subscription.Subscribing();
-
+            
+            Console.WriteLine("----------------EOF----------------");
         }
     }
 }
